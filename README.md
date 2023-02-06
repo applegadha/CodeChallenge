@@ -67,3 +67,7 @@ Note that depending on how you choose to complete this problem, your solution ma
 <li>04:00PM Rails for Python Developers lightning 
 <li>05:00PM Networking Event
 </ul>
+
+
+<h3> Solution: To test the code, run and enter the text with talk details. Enter two blank lines to denote end of input text. </h3>
+
