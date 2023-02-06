@@ -98,7 +98,7 @@
             [mutableArray addObject:talk];
             
             
-        } else if ([obj containsString:@"lightning"]){
+        } else if ([obj localizedCaseInsensitiveContainsString:@"lightning"]){
             //Check for lightening talk instead
             NSLog(@"Talk title contains word lightning");
             talk.talkTitle = obj;
