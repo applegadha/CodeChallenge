@@ -1,6 +1,6 @@
 # CodeChallenge
 
-<p> You are planning a big programming conference and have received many proposals which have passed the initial screen process but you're having trouble fitting them into the time constraints of the day -- there are so many possibilities! So you write a program to do it for you.
+<p> You are planning a big programming conference and have received many proposals which have passed the initial screen process but you're having trouble fitting them into the time constraints of the day -- there are so many possibilities! So you write a program to do it for you.</p>
 
 <ul>
 <li> The conference has multiple tracks each of which has a morning and afternoon session. </li>
@@ -14,7 +14,7 @@
 </ul>
 Note that depending on how you choose to complete this problem, your solution may give a different ordering or combination of talks into tracks. This is acceptable; you don’t need to exactly duplicate the sample output given here.
 
-<h3>Test input</h3>:
+<h3>Test input</h3>
 <ul>
 <li>Writing Fast Tests Against Enterprise Rails -  60min 
 <li>Overdoing it in Python -  45min 
@@ -34,11 +34,12 @@ Note that depending on how you choose to complete this problem, your solution ma
 <li>Ruby vs. Clojure for Back-End Development - 30min 
 <li>Ruby on Rails Legacy App Maintenance - 60min 
 <li>A World Without HackerNews - 30min 
-vUser Interface CSS in Rails Apps - 30min
+<li>User Interface CSS in Rails Apps - 30min
+</ul>
 
-
-Sample output: 
-Track 1: 
+<h3>Sample output: 
+  Track 1:</h3>
+ <ul>
 <li>09:00AM Writing Fast Tests Against Enterprise Rails 60min 
 <li>10:00AM Overdoing it in Python 45min 
 <li>10:45AM Lua for the Masses 30min 
@@ -52,7 +53,7 @@ Track 1: 
 <li>04:30PM User Interface CSS in Rails Apps 30min 
 <li>05:00PM Networking Event
 </ul>
-<h3>Track 2</h3>:
+<h3>Track 2:</h3>
 <ul>
 <li>09:00AM Communicating Over Distance 60min 
 <li>10:00AM Rails Magic 60min 
