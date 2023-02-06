@@ -13,9 +13,10 @@
 /**
  * TrackModel is a model class for tracks. Every track has a list of sessions - Morning, Afternoon, Lunch and Networking, which gets created before talks are assigned to individual sessions
  *
- * @discussion addTalkToTrack - Adds a talk to this track object
- * @discussion checkHasEMptySlots - Checks if any slot is still open in any of the sessions
- * @discussion print - Handles the formatting required for printing this track information
+ * @discussion
+    addTalkToTrack - Adds a talk to this track object
+ *  checkHasEMptySlots - Checks if any slot is still open in any of the sessions
+ *  print - Handles the formatting required for printing this track information
  */
 
 
