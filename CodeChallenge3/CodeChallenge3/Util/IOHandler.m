@@ -17,7 +17,8 @@
 
 
 -(NSString*) readInputScheduleFromConsole{
-    NSLog(@"Enter the program list; Add two empty line to signify the end");
+    NSLog(@"Enter the text with the talk details; Press enter twice to denote end of text");
+    
     NSFileHandle *inputFile = [NSFileHandle fileHandleWithStandardInput];
     NSMutableString *inputString = [NSMutableString string];
     
@@ -45,12 +46,17 @@
         return;
     }
     
-    for ( id element in trackList) {
+    NSMutableString *outputStr = [NSMutableString string];
+    
+    [trackList enumerateObjectsUsingBlock:^(id element, NSUInteger idx, BOOL *stop) {
         if ([element isKindOfClass:[TrackModel class]]){
             TrackModel *track = (TrackModel *)element;
-            NSLog(@"-----Track------\n%@",[track print]);
+            [outputStr appendString:[NSString stringWithFormat:@"----- Track %lu -----\n%@",idx+1,[track print]]];
         }
-    }
+    }];
+    
+    NSLog(@"%@",[NSString stringWithString:outputStr]);
+    
 }
 
 
@@ -71,10 +77,19 @@
         if ([matches count] > 0) {
             NSTextCheckingResult *result = [matches objectAtIndex:0];
             NSRange range = [result range];
+            
+            //Ideally, we should use NSSScanner to first check if the string can be converted to int
             NSString *numberString = [obj substringWithRange:range];
-            NSLog(@"The number in the string is: %d", numberString.intValue);
+            
+            NSLog(@"The talk duration in the title is : %d", numberString.intValue);
             talk.talkTitle = obj;
-            talk.talkDurationInMins = numberString.intValue;
+            
+            if (numberString.intValue > MAX_TALK_DURATION) {
+                talk.talkDurationInMins = MAX_TALK_DURATION;
+            } else {
+                talk.talkDurationInMins = numberString.intValue;
+            }
+            
             talk.isLightning = FALSE;
             [mutableArray addObject:talk];
             
