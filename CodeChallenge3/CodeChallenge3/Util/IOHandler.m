@@ -61,6 +61,10 @@
 
 
 -(NSArray *) parseInputSchedule:(NSString*)inputText{
+    
+    if (!inputText)
+        return nil;
+    
     //An mutable array to hold tasks list after parsing
     NSMutableArray *mutableArray = [NSMutableArray array];
     
@@ -107,7 +111,7 @@
             NSLog(@"Neither duration nor lightning word found in %@",obj);
         }
     }];
-    return [mutableArray copy];
+    return mutableArray.count > 0 ? [mutableArray copy] : nil;
 
 }
 

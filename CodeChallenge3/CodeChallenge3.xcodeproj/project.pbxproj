@@ -17,6 +17,17 @@
 		402BBE83298EE1870067381E /* BreakSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE82298EE1870067381E /* BreakSessionModel.m */; };
 		402BBE88298EEB8F0067381E /* TalkSchedular.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE87298EEB8F0067381E /* TalkSchedular.m */; };
 		402BBE8C2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE8B2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m */; };
+		407C8782299185270040EE83 /* CodeChallenge3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 407C8781299185270040EE83 /* CodeChallenge3Tests.m */; };
+		408AD8712991863B00D2581D /* ioHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 408AD8702991863B00D2581D /* ioHandler.m */; };
+		408AD87329918AB400D2581D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402BBE65298B7A1C0067381E /* CoreFoundation.framework */; };
+		408AD8742991900500D2581D /* TalkSchedular.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE87298EEB8F0067381E /* TalkSchedular.m */; };
+		408AD8752991900500D2581D /* IOHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE73298C6F1B0067381E /* IOHandler.m */; };
+		408AD8762991900500D2581D /* NSDateFormatter+DateTimeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE8B2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m */; };
+		408AD8772991900500D2581D /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE76298C85BE0067381E /* TrackModel.m */; };
+		408AD8782991900500D2581D /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE78298D48F30067381E /* SessionModel.m */; };
+		408AD8792991900500D2581D /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE6E298C02070067381E /* TalkModel.m */; };
+		408AD87A2991900500D2581D /* TechnicalSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */; };
+		408AD87B2991900500D2581D /* BreakSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE82298EE1870067381E /* BreakSessionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +63,12 @@
 		402BBE87298EEB8F0067381E /* TalkSchedular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkSchedular.m; sourceTree = "<group>"; };
 		402BBE8A2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+DateTimeFormatter.h"; sourceTree = "<group>"; };
 		402BBE8B2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+DateTimeFormatter.m"; sourceTree = "<group>"; };
+		407C877F299185260040EE83 /* CodeChallenge3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallenge3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		407C8781299185270040EE83 /* CodeChallenge3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeChallenge3Tests.m; sourceTree = "<group>"; };
+		407C8783299185270040EE83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		408AD8702991863B00D2581D /* ioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ioHandler.m; sourceTree = "<group>"; };
+		40BB268429914184001866E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40BB268A29914BE1001866E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +80,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		407C877C299185260040EE83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				408AD87329918AB400D2581D /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				402BBE5C298B79F00067381E /* CodeChallenge3 */,
+				407C8780299185270040EE83 /* CodeChallenge3Tests */,
 				402BBE5B298B79F00067381E /* Products */,
 				402BBE64298B7A1C0067381E /* Frameworks */,
 			);
@@ -79,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				402BBE5A298B79F00067381E /* CodeChallenge3 */,
+				407C877F299185260040EE83 /* CodeChallenge3Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +124,8 @@
 		402BBE64298B7A1C0067381E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40BB268A29914BE1001866E3 /* XCTest.framework */,
+				40BB268429914184001866E3 /* Foundation.framework */,
 				402BBE65298B7A1C0067381E /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
@@ -140,6 +169,16 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		407C8780299185270040EE83 /* CodeChallenge3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				408AD8702991863B00D2581D /* ioHandler.m */,
+				407C8781299185270040EE83 /* CodeChallenge3Tests.m */,
+				407C8783299185270040EE83 /* Info.plist */,
+			);
+			path = CodeChallenge3Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +199,23 @@
 			productReference = 402BBE5A298B79F00067381E /* CodeChallenge3 */;
 			productType = "com.apple.product-type.tool";
 		};
+		407C877E299185260040EE83 /* CodeChallenge3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 407C8784299185270040EE83 /* Build configuration list for PBXNativeTarget "CodeChallenge3Tests" */;
+			buildPhases = (
+				407C877B299185260040EE83 /* Sources */,
+				407C877C299185260040EE83 /* Frameworks */,
+				407C877D299185260040EE83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeChallenge3Tests;
+			productName = CodeChallenge3Tests;
+			productReference = 407C877F299185260040EE83 /* CodeChallenge3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,6 +226,11 @@
 				ORGANIZATIONNAME = "SHIVAM SINHA";
 				TargetAttributes = {
 					402BBE59298B79F00067381E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KTA5TBHZGK;
+						ProvisioningStyle = Automatic;
+					};
+					407C877E299185260040EE83 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KTA5TBHZGK;
 						ProvisioningStyle = Automatic;
@@ -189,9 +250,20 @@
 			projectRoot = "";
 			targets = (
 				402BBE59298B79F00067381E /* CodeChallenge3 */,
+				407C877E299185260040EE83 /* CodeChallenge3Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		407C877D299185260040EE83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		402BBE56298B79F00067381E /* Sources */ = {
@@ -207,6 +279,23 @@
 				402BBE83298EE1870067381E /* BreakSessionModel.m in Sources */,
 				402BBE5E298B79F00067381E /* main.m in Sources */,
 				402BBE74298C6F1B0067381E /* IOHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		407C877B299185260040EE83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				408AD8742991900500D2581D /* TalkSchedular.m in Sources */,
+				408AD8752991900500D2581D /* IOHandler.m in Sources */,
+				408AD8762991900500D2581D /* NSDateFormatter+DateTimeFormatter.m in Sources */,
+				408AD8772991900500D2581D /* TrackModel.m in Sources */,
+				408AD8782991900500D2581D /* SessionModel.m in Sources */,
+				408AD8792991900500D2581D /* TalkModel.m in Sources */,
+				408AD87A2991900500D2581D /* TechnicalSessionModel.m in Sources */,
+				408AD87B2991900500D2581D /* BreakSessionModel.m in Sources */,
+				408AD8712991863B00D2581D /* ioHandler.m in Sources */,
+				407C8782299185270040EE83 /* CodeChallenge3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +394,9 @@
 		402BBE62298B79F00067381E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DEVELOPMENT_TEAM = KTA5TBHZGK;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -313,7 +404,39 @@
 		402BBE63298B79F00067381E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DEVELOPMENT_TEAM = KTA5TBHZGK;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		407C8785299185270040EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KTA5TBHZGK;
+				INFOPLIST_FILE = CodeChallenge3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shivam.developer.CodeChallenge3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		407C8786299185270040EE83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KTA5TBHZGK;
+				INFOPLIST_FILE = CodeChallenge3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shivam.developer.CodeChallenge3Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -337,6 +460,16 @@
 				402BBE63298B79F00067381E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		407C8784299185270040EE83 /* Build configuration list for PBXNativeTarget "CodeChallenge3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				407C8785299185270040EE83 /* Debug */,
+				407C8786299185270040EE83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
