@@ -69,5 +69,5 @@ Note that depending on how you choose to complete this problem, your solution ma
 </ul>
 
 
-<h3> Solution: To test the code, run and enter the text with talk details. Enter two blank lines to denote end of input text. </h3>
+<h3> Solution: To test the app, run XCode application and enter the text on the console. Enter two blank lines to denote end of input text. Code will process and output the text in desired format </h3>
 
