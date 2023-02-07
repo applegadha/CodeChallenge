@@ -23,7 +23,7 @@
 @interface TrackModel : NSObject 
 
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, retain) NSMutableArray<SessionModel *> *sessions;
+@property (nonatomic, strong) NSMutableArray<SessionModel *> *sessions;
 
 
 /**

@@ -71,7 +71,7 @@
     
     
     NSArray *talks = [inputText componentsSeparatedByString: @"\n"];
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]+min" options:NSRegularExpressionCaseInsensitive error:NULL];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]+[ ]*min" options:NSRegularExpressionCaseInsensitive error:NULL];
     
     [talks enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
         

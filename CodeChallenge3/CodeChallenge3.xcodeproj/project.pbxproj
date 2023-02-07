@@ -29,6 +29,7 @@
 		408AD87A2991900500D2581D /* TechnicalSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */; };
 		408AD87B2991900500D2581D /* BreakSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE82298EE1870067381E /* BreakSessionModel.m */; };
 		408AD87D2992347000D2581D /* dateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 408AD87C2992347000D2581D /* dateFormatter.m */; };
+		408AD87F29925FD300D2581D /* talkSchedular.m in Sources */ = {isa = PBXBuildFile; fileRef = 408AD87E29925FD300D2581D /* talkSchedular.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		407C8783299185270040EE83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		408AD8702991863B00D2581D /* ioHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ioHandler.m; sourceTree = "<group>"; };
 		408AD87C2992347000D2581D /* dateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateFormatter.m; sourceTree = "<group>"; };
+		408AD87E29925FD300D2581D /* talkSchedular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = talkSchedular.m; sourceTree = "<group>"; };
 		40BB268429914184001866E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40BB268A29914BE1001866E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 		407C8780299185270040EE83 /* CodeChallenge3Tests */ = {
 			isa = PBXGroup;
 			children = (
+				408AD87E29925FD300D2581D /* talkSchedular.m */,
 				408AD87C2992347000D2581D /* dateFormatter.m */,
 				408AD8702991863B00D2581D /* ioHandler.m */,
 				407C8781299185270040EE83 /* CodeChallenge3Tests.m */,
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				408AD8742991900500D2581D /* TalkSchedular.m in Sources */,
+				408AD87F29925FD300D2581D /* talkSchedular.m in Sources */,
 				408AD8752991900500D2581D /* IOHandler.m in Sources */,
 				408AD8762991900500D2581D /* NSDateFormatter+DateTimeFormatter.m in Sources */,
 				408AD8772991900500D2581D /* TrackModel.m in Sources */,
