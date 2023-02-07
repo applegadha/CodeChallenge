@@ -12,12 +12,15 @@
 
 + (NSDate *) dateFromTimeString:(NSString *)time{
     
+    if(!time)
+        return nil;
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
     dateFormatter.dateFormat = @"hh:mm a";
     NSDate* date = [dateFormatter dateFromString:time];
     if (date == nil)
-        return [NSDate date];
+        return nil;
     return date;
 }
 

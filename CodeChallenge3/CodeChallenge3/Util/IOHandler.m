@@ -33,7 +33,8 @@
         NSMutableString *tmp = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [inputString appendString:tmp];
         // [tmp replaceOccurrencesOfString:@"\n\n" withString:@"" options:0 range:NSMakeRange(0, [tmp length])];
-        // Check for semi-colon:
+        
+        // Check for two empty lines:
     } while ([inputString rangeOfString:@"\n\n"].location == NSNotFound);
     
     return [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
@@ -43,7 +44,7 @@
 {
     
     if ([trackList count] == 0){
-        return;
+        NSLog(@"No Talk to Schedule.");
     }
     
     NSMutableString *outputStr = [NSMutableString string];
@@ -51,7 +52,7 @@
     [trackList enumerateObjectsUsingBlock:^(id element, NSUInteger idx, BOOL *stop) {
         if ([element isKindOfClass:[TrackModel class]]){
             TrackModel *track = (TrackModel *)element;
-            [outputStr appendString:[NSString stringWithFormat:@"----- Track %lu -----\n%@",idx+1,[track print]]];
+            [outputStr appendString:[NSString stringWithFormat:@"\n----- Track %lu -----\n%@",idx+1,[track print]]];
         }
     }];
     
@@ -70,7 +71,7 @@
     
     
     NSArray *talks = [inputText componentsSeparatedByString: @"\n"];
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]+" options:NSRegularExpressionCaseInsensitive error:NULL];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]+min" options:NSRegularExpressionCaseInsensitive error:NULL];
     
     [talks enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
         
@@ -85,7 +86,7 @@
             //Ideally, we should use NSSScanner to first check if the string can be converted to int
             NSString *numberString = [obj substringWithRange:range];
             
-            NSLog(@"The talk duration in the title is : %d", numberString.intValue);
+            NSLog(@"The talk duration in the title %@ is : %d", numberString, numberString.intValue);
             talk.talkTitle = obj;
             
             if (numberString.intValue > MAX_TALK_DURATION) {

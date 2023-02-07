@@ -60,6 +60,17 @@ IOHandler *iohandler;
     XCTAssertEqual([actual count],2);
 }
 
+- (void)testParseInputScheduleForCount {
+    // This is an example of a functional test case.
+    NSString *sampleTalk = @"Sample talk lightning \n Sample Talk - 20 mins \n Sample Talk-60mins \n Sample Talk-70min";
+    
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [iohandler parseInputSchedule:sampleTalk];
+    XCTAssertEqual([actual count],4);
+}
+
+
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
