@@ -31,8 +31,8 @@ typedef enum Session_Types
 @interface SessionModel : NSObject
 
 @property (nonatomic,readonly) SessionType sessiontype;
-@property (nonatomic,readonly) NSDate *openingTime;
-@property (nonatomic,readonly) NSDate *closingTime;
+@property (nonatomic,strong) NSDate *openingTime;
+@property (nonatomic,strong) NSDate *closingTime;
 @property (nonatomic, assign) BOOL hasEmptySlot;
 
 /**

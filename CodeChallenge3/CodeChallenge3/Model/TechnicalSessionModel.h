@@ -16,7 +16,7 @@
 @property (nonatomic, assign) BOOL canBeExtended;
 @property (nonatomic, assign) NSTimeInterval extensionAllowed;
 @property (nonatomic, assign) int remainingDuration;
-@property (nonatomic, retain) NSMutableArray *talksList;
+@property (nonatomic, strong) NSMutableArray *talksList;
 @property (nonatomic,strong)  NSDate *currentMarker;
 
 -(BOOL)addTalkToSession:(TalkModel *)talk;

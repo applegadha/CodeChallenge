@@ -11,7 +11,7 @@
 
 @protocol BreakSessionProtocol <NSObject>
 @property (nonatomic, assign) BOOL canBeExtended;
-@property (nonatomic, retain) NSString *sessionTitle;
+@property (nonatomic, strong) NSString *sessionTitle;
 -(NSString *) print;
 @end
 

@@ -106,4 +106,18 @@
     return [NSString stringWithString:outputStr];
 }
 
+
+
+- (int) countTalksInTrack{
+    unsigned long count = 0;
+    for ( id element in self.sessions) {
+        if ([element isKindOfClass:[TechnicalSessionModel class]]){
+            TechnicalSessionModel *session = (TechnicalSessionModel *)element;
+            count = count + [session.talksList count];
+        }
+    }
+    
+    return (int)count;
+}
+
 @end

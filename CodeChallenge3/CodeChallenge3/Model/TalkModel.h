@@ -23,7 +23,7 @@
 
 @interface TalkModel : NSObject
 
-@property (nonatomic,retain) NSString *talkTitle;
+@property (nonatomic,strong) NSString *talkTitle;
 @property (nonatomic,strong) NSDate  *talkStartTime;
 @property (nonatomic,assign) int  talkDurationInMins;
 @property (nonatomic,assign) BOOL  isLightning;

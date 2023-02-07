@@ -61,6 +61,15 @@
  */
 
 - (NSString*) print;
+
+/**
+ * Counts total talks within this track across sessions
+ *
+ * @return count
+ *
+ */
+
+- (int) countTalksInTrack;
 @end
 
 
