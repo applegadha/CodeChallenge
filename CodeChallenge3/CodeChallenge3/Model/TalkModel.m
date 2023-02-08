@@ -30,7 +30,10 @@
 }
 
 -(NSString *) print{
-    return [NSString stringWithFormat:@"%@ %@ %dmin \n", [NSDateFormatter timeStringFromDate:self.talkStartTime],talkTitle, talkDurationInMins];
+    if (self.isLightning)
+        return [NSString stringWithFormat:@"%@ %@ \n", [NSDateFormatter timeStringFromDate:self.talkStartTime],talkTitle];
+    else
+        return [NSString stringWithFormat:@"%@ %@ %dmin \n", [NSDateFormatter timeStringFromDate:self.talkStartTime],talkTitle, talkDurationInMins];
 }
 
 
