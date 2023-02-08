@@ -21,19 +21,33 @@ typedef enum Session_Types
 } SessionType;
 
 
+
+@protocol SessionProtocol <NSObject>
+
+@property (nonatomic, assign) int remainingDuration;
+@property (nonatomic, strong) NSMutableArray *talksList;
+@property (nonatomic,strong)  NSDate *currentMarker;
+
+-(BOOL)addTalkToSession:(TalkModel *)talk;
+-(NSString *) print;
+
+@end
+
 /**
- * SessionModel is a base model class for session within Tracks. Session is an abstract class and objects of derived classes TechincalSession or BreakSession should be created.
- *
+ * SessionModel is a  model class for session within Tracks.  *
  * Every Session should have a opening time and closing time. hasEmptySlot keeps a flag to check if session has empty slots if any.
  */
 
 
-@interface SessionModel : NSObject
+@interface SessionModel : NSObject <SessionProtocol>
 
 @property (nonatomic,readonly) SessionType sessiontype;
 @property (nonatomic,strong) NSDate *openingTime;
 @property (nonatomic,strong) NSDate *closingTime;
+@property (nonatomic, assign) NSTimeInterval extensionMins;
 @property (nonatomic, assign) BOOL hasEmptySlot;
+@property (nonatomic, assign) BOOL canBeExtended;
+@property (nonatomic, strong) NSString *sessionTitle;
 
 /**
  * Initializes a session by setting its opening and closing time. By default, new session is not open for booking. subclasses should overide and open it for booking.
@@ -42,7 +56,9 @@ typedef enum Session_Types
  *
  */
 
-- (id)initSession:(SessionType)type openingTime:(NSDate *)opensAt closingTime:(NSDate *)closesAt;
+- (id)initSession:(SessionType)type openingTime:(NSDate *)opensAt closingTime:(NSDate *)closesAt canBeExtendedBy:(NSTimeInterval) extensionMins;
+
+-(BOOL) isTechSession;
 
 @end
 

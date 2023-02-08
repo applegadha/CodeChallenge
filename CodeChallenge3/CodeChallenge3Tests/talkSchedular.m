@@ -48,6 +48,50 @@
     XCTAssertEqual(10, count, "Talks count doesn't match");
 }
 
+- (void)testParseInputScheduleForNil {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [talkschedular parseInputText:nil];
+    XCTAssertEqual(actual,nil);
+    
+}
+
+- (void)testParseInputScheduleForBadFormat {
+    // This is an example of a functional test case.
+    NSString *sampleTalk = @"Sample Talk \n Sample Talk";
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [talkschedular parseInputText:sampleTalk];
+    XCTAssertEqual(actual,nil);
+}
+
+- (void)testParseInputScheduleForEmptyString {
+    // This is an example of a functional test case.
+    NSString *sampleTalk = @"";
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [talkschedular parseInputText:sampleTalk];
+    XCTAssertNil(actual);
+}
+
+- (void)testParseInputScheduleForLigtning {
+    // This is an example of a functional test case.
+    NSString *sampleTalk = @"Sample talk lightning \n Sample Talk LIGHTNING";
+    
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [talkschedular parseInputText:sampleTalk];
+    XCTAssertEqual([actual count],2);
+}
+
+- (void)testParseInputScheduleForCount {
+    // This is an example of a functional test case.
+    NSString *sampleTalk = @"Sample talk lightning \n Sample Talk - 20 mins \n Sample Talk-60mins \n Sample Talk-70min";
+    
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray *actual = [talkschedular parseInputText:sampleTalk];
+    XCTAssertEqual([actual count],4);
+}
+
+
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

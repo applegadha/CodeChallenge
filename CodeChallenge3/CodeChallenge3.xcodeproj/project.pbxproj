@@ -13,8 +13,6 @@
 		402BBE74298C6F1B0067381E /* IOHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE73298C6F1B0067381E /* IOHandler.m */; };
 		402BBE77298C85BF0067381E /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE76298C85BE0067381E /* TrackModel.m */; };
 		402BBE79298D48F30067381E /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE78298D48F30067381E /* SessionModel.m */; };
-		402BBE81298ED0FB0067381E /* TechnicalSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */; };
-		402BBE83298EE1870067381E /* BreakSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE82298EE1870067381E /* BreakSessionModel.m */; };
 		402BBE88298EEB8F0067381E /* TalkSchedular.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE87298EEB8F0067381E /* TalkSchedular.m */; };
 		402BBE8C2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE8B2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m */; };
 		407C8782299185270040EE83 /* CodeChallenge3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 407C8781299185270040EE83 /* CodeChallenge3Tests.m */; };
@@ -26,8 +24,6 @@
 		408AD8772991900500D2581D /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE76298C85BE0067381E /* TrackModel.m */; };
 		408AD8782991900500D2581D /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE78298D48F30067381E /* SessionModel.m */; };
 		408AD8792991900500D2581D /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE6E298C02070067381E /* TalkModel.m */; };
-		408AD87A2991900500D2581D /* TechnicalSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */; };
-		408AD87B2991900500D2581D /* BreakSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 402BBE82298EE1870067381E /* BreakSessionModel.m */; };
 		408AD87D2992347000D2581D /* dateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 408AD87C2992347000D2581D /* dateFormatter.m */; };
 		408AD87F29925FD300D2581D /* talkSchedular.m in Sources */ = {isa = PBXBuildFile; fileRef = 408AD87E29925FD300D2581D /* talkSchedular.m */; };
 /* End PBXBuildFile section */
@@ -57,10 +53,6 @@
 		402BBE76298C85BE0067381E /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
 		402BBE78298D48F30067381E /* SessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionModel.m; sourceTree = "<group>"; };
 		402BBE7A298D49060067381E /* SessionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionModel.h; sourceTree = "<group>"; };
-		402BBE7F298ECFC80067381E /* TechnicalSessionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalSessionModel.h; sourceTree = "<group>"; };
-		402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechnicalSessionModel.m; sourceTree = "<group>"; };
-		402BBE82298EE1870067381E /* BreakSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreakSessionModel.m; sourceTree = "<group>"; };
-		402BBE84298EE19E0067381E /* BreakSessionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BreakSessionModel.h; sourceTree = "<group>"; };
 		402BBE86298EE9680067381E /* TalkSchedular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkSchedular.h; sourceTree = "<group>"; };
 		402BBE87298EEB8F0067381E /* TalkSchedular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkSchedular.m; sourceTree = "<group>"; };
 		402BBE8A2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+DateTimeFormatter.h"; sourceTree = "<group>"; };
@@ -144,10 +136,6 @@
 				402BBE78298D48F30067381E /* SessionModel.m */,
 				402BBE6D298C01250067381E /* TalkModel.h */,
 				402BBE6E298C02070067381E /* TalkModel.m */,
-				402BBE7F298ECFC80067381E /* TechnicalSessionModel.h */,
-				402BBE80298ED0FB0067381E /* TechnicalSessionModel.m */,
-				402BBE84298EE19E0067381E /* BreakSessionModel.h */,
-				402BBE82298EE1870067381E /* BreakSessionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,10 +267,8 @@
 				402BBE6F298C02070067381E /* TalkModel.m in Sources */,
 				402BBE88298EEB8F0067381E /* TalkSchedular.m in Sources */,
 				402BBE77298C85BF0067381E /* TrackModel.m in Sources */,
-				402BBE81298ED0FB0067381E /* TechnicalSessionModel.m in Sources */,
 				402BBE8C2990D5FC0067381E /* NSDateFormatter+DateTimeFormatter.m in Sources */,
 				402BBE79298D48F30067381E /* SessionModel.m in Sources */,
-				402BBE83298EE1870067381E /* BreakSessionModel.m in Sources */,
 				402BBE5E298B79F00067381E /* main.m in Sources */,
 				402BBE74298C6F1B0067381E /* IOHandler.m in Sources */,
 			);
@@ -299,8 +285,6 @@
 				408AD8772991900500D2581D /* TrackModel.m in Sources */,
 				408AD8782991900500D2581D /* SessionModel.m in Sources */,
 				408AD8792991900500D2581D /* TalkModel.m in Sources */,
-				408AD87A2991900500D2581D /* TechnicalSessionModel.m in Sources */,
-				408AD87B2991900500D2581D /* BreakSessionModel.m in Sources */,
 				408AD87D2992347000D2581D /* dateFormatter.m in Sources */,
 				408AD8712991863B00D2581D /* ioHandler.m in Sources */,
 				407C8782299185270040EE83 /* CodeChallenge3Tests.m in Sources */,

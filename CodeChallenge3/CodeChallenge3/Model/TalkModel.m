@@ -24,12 +24,13 @@
 }
 
 -(void) markAsScheduled:(NSDate*) startTime{
+    NSLog(@"mark talk as assigned");
     self.talkStartTime = startTime;
     self.assignedStatus = TRUE;
 }
 
 -(NSString *) print{
-return [NSString stringWithFormat:@"%@ %@ \n", [NSDateFormatter timeStringFromDate:self.talkStartTime],talkTitle];
+    return [NSString stringWithFormat:@"%@ %@ %dmin \n", [NSDateFormatter timeStringFromDate:self.talkStartTime],talkTitle, talkDurationInMins];
 }
 
 

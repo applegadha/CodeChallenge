@@ -16,6 +16,14 @@
 
 @interface IOHandler : NSObject
 
+/**
+ * Singleton nethod to get only instance of IOHandler
+ *
+ *
+ */
+
++ (id)current;
+
 
 /**
  * Read from console text with talks data to be scheduled; Enter two empty lines to denote EOF.
@@ -26,15 +34,7 @@
 
 -(NSString*) readInputScheduleFromConsole;
 
-/**
- * Parse text read from Console to seperate title and duration and get a list of talks
- *
- * @param inputText - Input string read from console
- * @return Array List of talks
- *
- */
 
--(NSArray *) parseInputSchedule:(NSString*) inputText;
 
 /**
  * Writes final output schedule into console

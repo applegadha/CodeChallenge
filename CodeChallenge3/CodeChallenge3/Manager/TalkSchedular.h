@@ -37,6 +37,16 @@
  */
 -(void) scheduleTalksIntoTracks:(NSArray *)talksList;
 
+/**
+ * Parse text read from Console to seperate title and duration and get a list of talks
+ *
+ * @param inputText - Input string read from console
+ * @return Array List of talks
+ *
+ */
+
+-(NSArray *) parseInputText:(NSString*) inputText;
+
 @end
 
 #endif /* TalkSchedular_h */

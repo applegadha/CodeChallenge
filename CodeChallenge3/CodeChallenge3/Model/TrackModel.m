@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TrackModel.h"
 #import "SessionModel.h"
-#import "TechnicalSessionModel.h"
-#import "BreakSessionModel.h"
 #import "IOHandler.h"
 #import "NSDateFormatter+DateTimeFormatter.h"
 #import "constants.h"
@@ -22,30 +20,25 @@
     self = [super init];
     if(self){
         //Morning Tech Session - 09:00 AM - 12:00 PM
-        SessionModel *morning = [[SessionModel alloc] initSession:MORNING_SESSION openingTime:[NSDateFormatter dateFromTimeString:MORNING_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:MORNING_CLOSING_TIME]];
+        SessionModel *morning = [[SessionModel alloc] initSession:MORNING_SESSION openingTime:[NSDateFormatter dateFromTimeString:MORNING_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:MORNING_CLOSING_TIME] canBeExtendedBy:0];
         
-        TechnicalSessionModel *morningTechSession = [[TechnicalSessionModel alloc] initWithBaseSession:morning canBeExtended:FALSE extensionAllowed:0];
-    
         //Afternoon TechSession - 01:00 PM - 04:00 PM (extensible till 5 PM)
+        SessionModel *afternoon = [[SessionModel alloc] initSession:AFTERNOON_SESSION openingTime:[NSDateFormatter dateFromTimeString:AFTERNOON_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:AFTERNOON_CLOSING_TIME] canBeExtendedBy:AFTERNOON_SESSION_EXTENSION_PERIOD];
         
-        SessionModel *afternoon = [[SessionModel alloc] initSession:AFTERNOON_SESSION openingTime:[NSDateFormatter dateFromTimeString:AFTERNOON_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:AFTERNOON_CLOSING_TIME]];
+        //Lunch Session - 12:00 PM - 1:00 PM
+        SessionModel *lunch = [[SessionModel alloc] initSession:LUNCH_SESSION openingTime:[NSDateFormatter dateFromTimeString:LUNCH_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:LUNCH_CLOSING_TIME] canBeExtendedBy:0];
         
-        TechnicalSessionModel *afternoonTechSession = [[TechnicalSessionModel alloc] initWithBaseSession:afternoon canBeExtended:TRUE extensionAllowed:AFTERNOON_SESSION_EXTENSION_PERIOD];
+        //NETWORKING Session - 05:00 PM - 06:00 PM
+        SessionModel *networking = [[SessionModel alloc] initSession:NETWORKING_SESSION openingTime:[NSDateFormatter dateFromTimeString:NETWORKING_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:NETWORKING_CLOSING_TIME] canBeExtendedBy:0];
         
-        SessionModel *lunch = [[SessionModel alloc] initSession:LUNCH_SESSION openingTime:[NSDateFormatter dateFromTimeString:LUNCH_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:LUNCH_CLOSING_TIME]];
-        
-        BreakSessionModel *lunchBreakSession = [[BreakSessionModel alloc] initWithBaseSession:lunch title:@"LUNCH"];
-        
-        SessionModel *networking = [[SessionModel alloc] initSession:NETWORKING_SESSION openingTime:[NSDateFormatter dateFromTimeString:NETWORKING_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:NETWORKING_CLOSING_TIME]];
-        
-        BreakSessionModel *networkingBreakSession = [[BreakSessionModel alloc] initWithBaseSession:networking title:@"NETWORKING"];
-        
-        
+        [afternoon addObserver:networking forKeyPath:NSStringFromSelector(@selector(currentMarker)) options:NSKeyValueObservingOptionNew context:NULL];
         
         if (! self.sessions)
-            self.sessions = [NSMutableArray arrayWithObjects:morningTechSession,lunchBreakSession,afternoonTechSession,networkingBreakSession, nil];
+            self.sessions = [NSMutableArray arrayWithObjects:morning,lunch,afternoon,networking, nil];
         
-        [self observeSessionStatusChange];    
+        
+        
+        //[self observeSessionStatusChange];
     }
     return self;
 }
@@ -72,16 +65,11 @@
 }
 
 -(void) addTalkToTrack:(TalkModel *)talk{
-    if ([self checkHasEmptySlots]){
-        for (id object in self.sessions){
-            if ([object isKindOfClass:[TechnicalSessionModel class]]){
-                TechnicalSessionModel *techsession = (TechnicalSessionModel *)object;
-                if ([techsession hasEmptySlot] && !talk.assignedStatus)
-                    [techsession addTalkToSession:talk];
-
-                    }
+        for (SessionModel* object in self.sessions){
+            NSLog(@"Adding talk to track");
+            if ([object isTechSession] && [object hasEmptySlot] && !talk.assignedStatus)
+                    [object addTalkToSession:talk];
         }
-    }
 }
 
 
@@ -92,17 +80,10 @@
     
     NSMutableString *outputStr = [NSMutableString string];
     
-    for ( id element in self.sessions) {
-        if ([element isKindOfClass:[TechnicalSessionModel class]]){
-            TechnicalSessionModel *session = (TechnicalSessionModel *)element;
-            [outputStr appendString:[session print]];
-        }
-        
-        else if ([element isKindOfClass:[BreakSessionModel class]]){
-            BreakSessionModel *session = (BreakSessionModel *)element;
-            [outputStr appendString:[session print]];
-        }
+    for ( SessionModel* element in self.sessions) {
+            [outputStr appendString:[element print]];
     }
+    
     return [NSString stringWithString:outputStr];
 }
 
@@ -110,12 +91,9 @@
 
 - (int) countTalksInTrack{
     unsigned long count = 0;
-    for ( id element in self.sessions) {
-        if ([element isKindOfClass:[TechnicalSessionModel class]]){
-            TechnicalSessionModel *session = (TechnicalSessionModel *)element;
-            count = count + [session.talksList count];
+    for (SessionModel* element in self.sessions) {
+            count = count + [element.talksList count];
         }
-    }
     
     return (int)count;
 }

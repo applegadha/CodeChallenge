@@ -12,9 +12,17 @@
 #import "TalkModel.h"
 #import "TrackModel.h"
 
+static IOHandler *current = nil;
+
 @implementation IOHandler
 
-
++ (id)current {
+    @synchronized(self) {
+        if (current == nil)
+            current = [[super alloc] init];
+    }
+    return current;
+}
 
 -(NSString*) readInputScheduleFromConsole{
     NSLog(@"Enter the text with the talk details; Press enter twice to denote end of text");
@@ -61,60 +69,6 @@
 }
 
 
--(NSArray *) parseInputSchedule:(NSString*)inputText{
-    
-    if (!inputText)
-        return nil;
-    
-    //An mutable array to hold tasks list after parsing
-    NSMutableArray *mutableArray = [NSMutableArray array];
-    
-    
-    NSArray *talks = [inputText componentsSeparatedByString: @"\n"];
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]+[ ]*min" options:NSRegularExpressionCaseInsensitive error:NULL];
-    
-    [talks enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
-        
-        TalkModel *talk = [[TalkModel alloc] init];
-        
-        NSArray *matches = [regex matchesInString:obj options:0 range:NSMakeRange(0, [obj length])];
-        
-        if ([matches count] > 0) {
-            NSTextCheckingResult *result = [matches objectAtIndex:0];
-            NSRange range = [result range];
-            
-            //Ideally, we should use NSSScanner to first check if the string can be converted to int
-            NSString *numberString = [obj substringWithRange:range];
-            
-            NSLog(@"The talk duration in the title %@ is : %d", numberString, numberString.intValue);
-            talk.talkTitle = obj;
-            
-            if (numberString.intValue > MAX_TALK_DURATION) {
-                talk.talkDurationInMins = MAX_TALK_DURATION;
-            } else {
-                talk.talkDurationInMins = numberString.intValue;
-            }
-            
-            talk.isLightning = FALSE;
-            [mutableArray addObject:talk];
-            
-            
-        } else if ([obj localizedCaseInsensitiveContainsString:@"lightning"]){
-            //Check for lightening talk instead
-            NSLog(@"Talk title contains word lightning");
-            talk.talkTitle = obj;
-            talk.talkDurationInMins = 5;
-            talk.isLightning = TRUE;
-            [mutableArray addObject:talk];
-            
-        }
-        else{
-            NSLog(@"Neither duration nor lightning word found in %@",obj);
-        }
-    }];
-    return mutableArray.count > 0 ? [mutableArray copy] : nil;
-
-}
 
 
 @end

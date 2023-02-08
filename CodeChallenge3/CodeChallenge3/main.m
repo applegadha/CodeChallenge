@@ -17,20 +17,19 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSLog(@"Code Challenge 3");
-        IOHandler *ip = [[IOHandler alloc] init];
         
         //Read Text from Console, with talks data
-        NSString* schedule = [ip readInputScheduleFromConsole];
+        NSString* schedule = [[IOHandler current] readInputScheduleFromConsole];
         NSLog(@"User input schedule = %@", schedule);
         
         //Parse Input data to get a list of talks to be scheduled
-        NSArray  *talkslist = [ip parseInputSchedule:schedule];
+        NSArray* talkslist = [[TalkSchedular current] parseInputText:schedule];
         
         //Schedule Talks into different tracks
         [[TalkSchedular current] scheduleTalksIntoTracks:talkslist];
         
         //Write Output Tracks into Console
-        [ip writeOutputScheduleToConsole: [[TalkSchedular current] tracks]];
+        [[IOHandler current] writeOutputScheduleToConsole: [[TalkSchedular current] tracks]];
         
     }
     return 0;
