@@ -31,26 +31,18 @@
         //NETWORKING Session - 05:00 PM - 06:00 PM
         SessionModel *networking = [[SessionModel alloc] initSession:NETWORKING_SESSION openingTime:[NSDateFormatter dateFromTimeString:NETWORKING_OPENING_TIME] closingTime:[NSDateFormatter dateFromTimeString:NETWORKING_CLOSING_TIME] canBeExtendedBy:0];
         
+        //Add networking session as an observer to Afternoon session, for adjusting time
         [afternoon addObserver:networking forKeyPath:NSStringFromSelector(@selector(currentMarker)) options:NSKeyValueObservingOptionNew context:NULL];
         
         if (! self.sessions)
             self.sessions = [NSMutableArray arrayWithObjects:morning,lunch,afternoon,networking, nil];
         
-        
-        
-        //[self observeSessionStatusChange];
+
     }
     return self;
 }
 
-- (void)observeSessionStatusChange {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSessionStatusChange:) name:@"SessionStatusChanged" object:nil];
-}
 
-- (void)handleSessionStatusChange:(NSNotification *)notification {
-    SessionModel *session = (SessionModel *)notification.object;
-    NSLog(@"Status changed: %d", session.hasEmptySlot);
-}
 
 -(BOOL) checkHasEmptySlots
 {

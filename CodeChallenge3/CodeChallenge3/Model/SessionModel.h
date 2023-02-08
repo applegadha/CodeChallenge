@@ -24,9 +24,9 @@ typedef enum Session_Types
 
 @protocol SessionProtocol <NSObject>
 
-@property (nonatomic, assign) int remainingDuration;
-@property (nonatomic, strong) NSMutableArray *talksList;
-@property (nonatomic,strong)  NSDate *currentMarker;
+@property (nonatomic, assign) int remainingDuration; //keeps track of remaining time left in session ( in mins)
+@property (nonatomic, strong) NSMutableArray *talksList; // list of talks
+@property (nonatomic,strong)  NSDate *currentMarker; //keeps track of time at which next talk can be scheduled in this session
 
 -(BOOL)addTalkToSession:(TalkModel *)talk;
 -(NSString *) print;
@@ -42,12 +42,12 @@ typedef enum Session_Types
 @interface SessionModel : NSObject <SessionProtocol>
 
 @property (nonatomic,readonly) SessionType sessiontype;
-@property (nonatomic,strong) NSDate *openingTime;
-@property (nonatomic,strong) NSDate *closingTime;
-@property (nonatomic, assign) NSTimeInterval extensionMins;
-@property (nonatomic, assign) BOOL hasEmptySlot;
-@property (nonatomic, assign) BOOL canBeExtended;
-@property (nonatomic, strong) NSString *sessionTitle;
+@property (nonatomic,strong) NSDate *openingTime; //opening time of session
+@property (nonatomic,strong) NSDate *closingTime; //closing time of session
+@property (nonatomic, assign) NSTimeInterval extensionMins; //duration in mins by which session can be extended, if required
+@property (nonatomic, assign) BOOL hasEmptySlot; //flag to denote if session still has empty slots
+@property (nonatomic, assign) BOOL canBeExtended; //whether session is allowed an extension
+@property (nonatomic, strong) NSString *sessionTitle; //title of the session
 
 /**
  * Initializes a session by setting its opening and closing time. By default, new session is not open for booking. subclasses should overide and open it for booking.

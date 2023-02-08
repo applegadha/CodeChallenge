@@ -10,7 +10,7 @@
 #define IOHandler_h
 
 /**
- * IOHandler handles input output data from this program. It provides methods to read input from console, parse the input to create a list of talks to be scheduled and to write final tracks on console
+ * IOHandler  is a singleton class that handles IO data to/from console. It provides methods to read input from console and to write final tracks on console
  *
  */
 
